@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head><title>Home</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
     <h1>Welcome to the Authentication System</h1>
-    <a href="{{ url_for('register') }}">Register</a><br>
-    <a href="{{ url_for('login') }}">Login</a>
+    <nav>
+        <a href="{{ url_for('register') }}">Register</a> |
+        <a href="{{ url_for('login') }}">Login</a>
+    </nav>
 </body>
 </html>

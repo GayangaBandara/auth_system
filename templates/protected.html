@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head><title>Protected</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protected</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
     <h1>Welcome, {{ username }}!</h1>
     <p>This is a protected page only for logged-in users.</p>
+    <div class="links">
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
 </body>
 </html>

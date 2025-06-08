@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, flash, make_response
-import sqlite3
-import hashlib
-import jwt
+import sqlite3, hashlib, jwt
 from datetime import datetime, timedelta
 from functools import wraps
 
@@ -94,6 +92,13 @@ def login():
 @token_required
 def protected():
     return render_template('protected.html', username=request.username)
+
+@app.route('/logout')
+def logout():
+    resp = make_response(redirect(url_for('login')))
+    resp.set_cookie('token', '', expires=0)
+    flash('You have been logged out.')
+    return resp
 
 if __name__ == '__main__':
     init_db()
