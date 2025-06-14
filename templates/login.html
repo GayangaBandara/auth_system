@@ -1,9 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
     <h1>Login</h1>
@@ -23,7 +24,12 @@
         <input id="username" name="username" required><br>
 
         <label for="password">Password:</label>
-        <input id="password" type="password" name="password" required><br>
+        <div class="password-wrapper">
+            <input id="password" type="password" name="password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility()">
+                <i id="eye-icon" class="fa-solid fa-eye"></i>
+            </span>
+        </div>
 
         <button type="submit">Login</button>
     </form>

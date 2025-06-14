@@ -37,6 +37,19 @@ input[type="password"] {
     box-sizing: border-box;
 }
 
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
 button {
     margin-top: 20px;
     width: 100%;
